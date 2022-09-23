@@ -7,8 +7,6 @@ const Search = () => {
   const router = useRouter()
   const { location, startDate, endDate, noOfGuests } = router.query
 
-  console.log(startDate, endDate)
-
   const formattedStartDate = moment(startDate).format('MM/DD/YYYY')
   const formattedEndDate = moment(endDate).format('MM/DD/YYYY')
   const range = `${formattedStartDate} - ${formattedEndDate}`
