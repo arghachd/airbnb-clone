@@ -1,14 +1,16 @@
 import { useRouter } from 'next/router'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
-import { format } from 'date-fns'
+import moment from 'moment'
 
 const Search = () => {
   const router = useRouter()
   const { location, startDate, endDate, noOfGuests } = router.query
 
-  const formattedStartDate = format(new Date(startDate), 'dd MMMM yy')
-  const formattedEndDate = format(new Date(endDate), 'dd MMMM yy')
+  console.log(startDate, endDate)
+
+  const formattedStartDate = moment(startDate).format('MM/DD/YYYY')
+  const formattedEndDate = moment(endDate).format('MM/DD/YYYY')
   const range = `${formattedStartDate} - ${formattedEndDate}`
 
   return (
